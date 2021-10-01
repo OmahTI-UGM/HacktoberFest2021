@@ -1,6 +1,6 @@
-# HacktoberFest2021
+# OmahTI x HacktoberFest 2021
 
-OmahTI goes to HacktoberFest <br/>
+OmahTI goes to HacktoberFest 2021 <br/>
 Repo ini terbuka untuk umum dan yang belum pernah belajar git lohh :)
 
 ## Tutorial HacktoberFest
