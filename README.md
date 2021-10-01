@@ -11,7 +11,7 @@ Repo ini terbuka untuk umum dan yang belum pernah belajar git lohh :)
 ## Tutorial Pull Request
 
 1. Fork repo ini ke github kalian (ada di pojok kanan atas)
-2. Kalian akan dikirim ke laman github kalian, misal https://github.com/{namarepokamu}/HacktoberFest2020/
+2. Kalian akan dikirim ke laman github kalian, misal https://github.com/{namarepokamu}/HacktoberFest2021/
 3. Clone repo di github kalian (klik download code, atau bisa juga pakai git clone)
 4. Modifikasi code didalamnya 1x dulu (Bisa ngasih program baru atau fix code terserah, usahakan untuk memberikan usaha terbaik dalam code kalian)
 5. git add .
