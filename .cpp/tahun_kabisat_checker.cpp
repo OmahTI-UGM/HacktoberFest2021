@@ -1,9 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Nama : Dani Ihza Farrosi
-// NIM  : 18/424184/PA/18289
-
 int main() {
     cout << "Program untuk mengetahui tahun kabisat\n";
     int tahun;
