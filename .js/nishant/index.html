@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myself</title>
+  </head>
+  <script>
+    function display(element) {
+      document.getElementById("image").innerHTML = element.alt;
+    }
+    function revert() {
+      document.getElementById("image").innerHTML =
+        "Hover over a sunsign image to display details.";
+    }
+  </script>
+  <style>
+    #image {
+      width: 650px;
+      height: 70px;
+      border: 5px solid pink;
+      background-color: black;
+      background-repeat: no-repeat;
+      color: white;
+      background-size: 100%;
+      font-family: Didot;
+      font-size: 150%;
+      line-height: 60px;
+      text-align: center;
+    }
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      padding: 5px;
+    }
+  </style>
+
+  <body>
+    <div class="nav">
+      <h1>Refresh Webpages to see different images</h1>
+    </div>
+    <div class="container">
+      <p id="image">Hover over images to see about myself</p>
+      <p>
+        <img
+          alt="Myself Nishant Kumar."
+          src="https://picsum.photos/202/305"
+          onmouseover="display(this)"
+          onmouseout="revert()"
+        />
+        <img
+          alt="I am beginner in open source contribution"
+          src="https://picsum.photos/202/303"
+          onmouseover="display(this)"
+          onmouseout="revert()"
+        />
+        <img
+          alt="I like Web develpment and passionate about it."
+          src="https://picsum.photos/200/301"
+          onmouseover="display(this)"
+          onmouseout="revert()"
+        />
+        <img
+          alt="I am also cometetive programmer"
+          src="https://picsum.photos/201/300"
+          onmouseover="display(this)"
+          onmouseout="revert()"
+        />
+      </p>
+    </div>
+  </body>
+</html>
