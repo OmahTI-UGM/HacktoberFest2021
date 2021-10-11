@@ -1,0 +1,100 @@
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Frame;
+import java.awt.Graphics;
+import static java.lang.Math.abs;
+import static java.lang.Math.pow;
+import static java.lang.Math.round;
+import java.util.Scanner;
+
+public class Bezier {
+
+    public static void main(String[] args) {
+        int x1, y1, x2, y2, x3, y3, x4, y4;
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Koordinat 1");
+        System.out.print("x: ");
+        x1 = input.nextInt();
+        System.out.print("y: ");
+        y1 = input.nextInt();
+
+        System.out.println("Koordinat 2");
+        System.out.print("x: ");
+        x2 = input.nextInt();
+        System.out.print("y: ");
+        y2 = input.nextInt();
+
+        System.out.println("Koordinat 3");
+        System.out.print("x: ");
+        x3 = input.nextInt();
+        System.out.print("y: ");
+        y3 = input.nextInt();
+
+        System.out.println("Koordinat 4");
+        System.out.print("x: ");
+        x4 = input.nextInt();
+        System.out.print("y: ");
+        y4 = input.nextInt();
+
+        Frame f = new Frame("Bezier Line");
+        f.setLayout(null);
+        f.setSize(800, 800);
+        f.setVisible(true);
+
+        f.add(new MyCanvas(x1, y1, x2, y2, x3, y3, x4, y4));
+    }
+}
+
+class MyCanvas extends Canvas {
+
+    int x1, x2, x3, x4, y1, y2, y3, y4;
+
+    MyCanvas(int x1, int y1, int x2, int y2, int x3, int y3, int x4, int y4) {
+        this.x1 = x1;
+        this.x2 = x2;
+        this.x3 = x3;
+        this.x4 = x4;
+        this.y1 = y1;
+        this.y2 = y2;
+        this.y3 = y3;
+        this.y4 = y4;
+
+        setBackground(Color.WHITE);
+        setSize(800, 800);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        g.setColor(Color.BLACK);
+        
+        bezierLine(g);
+    }
+
+    private void bezierLine(Graphics g) {
+        int x, y;
+        double u = 0;
+        double steps = 1 / (double)(panjang(x1, y1, x2, y2) + panjang(x2, y2, x3, y3) + panjang(x3, y3, x4, y4));
+        
+        g.fillRect(x1, y1, 5, 5);
+        g.fillRect(x2, y2, 5, 5);
+        g.fillRect(x3, y3, 5, 5);
+        g.fillRect(x4, y4, 5, 5);
+        while (u <= 1) {
+            x = (int) round(x1 * pow(3, (1 - u)) + 3 * x2 * u * pow(2, (1 - u)) + 3 * x3 * pow(2, u) * (1 - u) + x4 * pow(3, u));
+            y = (int) round (y1 * pow(3, (1 - u)) + 3 * y2 * u * pow(2, (1 - u)) + 3 * y3 * pow(2, u) * (1 - u) + y4 * pow(3, u));
+            u = u + steps;
+        }
+        
+    }
+
+    private int panjang(int x1, int y1, int x2, int y2) {
+        int dx = abs(x2 - x1);
+        int dy = abs(y2 - y1);
+        if (dx > dy) {
+            return dx;
+        } else {
+            return dy;
+        }
+    }
+}
